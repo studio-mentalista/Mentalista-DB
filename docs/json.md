@@ -7,6 +7,7 @@ Il n’existe pas encore de standardisation d'un format de données pour l’env
 Notre base de données est programmée en langage web mais les casques EEG sont programmés en C et en Java et d’autres langages utilisés pour l’électronique. Il nous faut un format récent / portable / déjà utilisé sur le web et l’électronique. le meilleur candidat est le format de description **.JSON** ([JavaScript Object Notation](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation)).
 
 ***Cerveau (Électricité) > OpenBCI (C) > Wifi Shield (C) > Streaming (NodeJS + JSON) > Mentalista DB (Javascript)***
+
 Une illustration du chemin de l'onde cérébrale vers la base de données.
 
 Le fichier JSON doit encapsuler les différents standards. Ceux utilisés à l'échelle internationale utilisée par d'autres scientifiques et les standards propores à la structure de la base de données et ses futures applications.
@@ -52,7 +53,8 @@ Ce qui donne 4 entrées pour le fichier JSON :
 }],
 ```
 
-**biodata**: décrit l’enregistrement des données en fonction de la [topologie](https://en.wikipedia.org/wiki/10–20_system_(EEG)), d’un [timestamp](https://fr.wikipedia.org/wiki/Horodatage) et de l’unité
+**biodata**: décrit l’enregistrement des données en fonction du type, de la [topologie](https://en.wikipedia.org/wiki/10–20_system_(EEG)), d'un [timestamp](https://fr.wikipedia.org/wiki/Horodatage) et de l’unité.
+
 L’exemple ici montre trois enregistrements cérébraux à 8 canaux avec chacun un timestamp leur donnant un repère temporel précis.
 
 ```
@@ -97,7 +99,7 @@ L’exemple ici montre trois enregistrements cérébraux à 8 canaux avec chacun
 ]
 ```
 
-**mentalista**: 
+**mentalista**: héberge toutes les méta-données permettant de classifier l'enregistrement cérébral dans la base de données. 
 
 ```
 "mentalista": [
@@ -106,7 +108,15 @@ L’exemple ici montre trois enregistrements cérébraux à 8 canaux avec chacun
 ]
 ```
 
-**app**: 
+**app**: indique tout les données propre à l'expérience qui a permis de receuillir ces données elle peuvent être varier.
+
+Voici un exemple des applications qui peuvent receuillir des informations pour la base de données
+- [MentalistaFoot](http://mentalista.fr/foot)
+- [Mentalista Guinguette](http://mentalista.fr/guinguette)
+- [BrainSound](http://mentalista.fr/brainsound)
+- [Projet Levitation](http://mentalista.fr/levitation)
+
+L'exemple qui suis montre les méta-données pour la classification d'objet par le cortex visuel utilisé pour *la libraire de pensée*
 
 ```
 "app": [
