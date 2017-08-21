@@ -1,12 +1,20 @@
-## 2.2.1.1 Standardisation d’un modèle d’envoie de donnée
+## 2.2.1.1 Standardisation d’un modèle d’envoi de donnée
 
-Il n’existe pas encore de standardisation de format de données pour l’envoie de données cérébrales, il existe quelques tentatives sur Internet qui rassemblent des scientifiques du monde entier mais cette standardisation n’est pas encore adopté par tout les équipementier qui capturent de l’EEG et d’autre données biologique. L’objectif est de repartir de ces recherches pour approfondir et améliorer les premières tentatives de standardization et de définir le format de donnée incluant les données cérébrales et leurs méta-donnée qui seront utilisé par la base de donnée pour traiter et analyser ses données biologiques.
+Il n’existe pas encore de standardisation d'un format de données pour l’envoi de données cérébrales, il existe quelques [tentatives](https://github.com/NeuroJS/eeg-stream-data-model/issues/1) sur Internet qui rassemble des scientifiques du monde entier mais cette standardisation n’est pas encore adoptée par tous les équipementiers qui capturent de l’EEG et d’autres données biologiques. L’objectif est de repartir de ses recherches pour approfondir et améliorer les dernières tentatives de standardisation et de définir le format de données incluant les données cérébrales et leurs méta-données qui seront utilisées par la base de données.
 
 ###### Cahier des charges pour un format standard pour l’envoie de données cérébrales et biologique :
 
-Notre base de données est programmé en langage web mais les casques EEG sont programmé en C en Java ou d’autre langage utilisé pour l’électronique il nous faut un format récent / portable / déjà utilisé sur le web et l’électronique. le meilleur candidat est le format de description .JSON (JavaScript Object Notation) 
-Notre casque est programmé en C il communique via une puce Wifi en NodeJS vers notre serveur aussi programmé en Javascript le format qui aura la meilleur compatibilité entre les différents maillons de la chaine est le JSON.
-Le fichier JSON doit encapsuler les différents standard qui nous permet définir un standard international pour les Bio Data et les Informations mais de quand même ajouter des Meta Données propre à la structure de la base de données
+Notre base de données est programmée en langage web mais les casques EEG sont programmés en C et en Java et d’autres langages utilisés pour l’électronique. Il nous faut un format récent / portable / déjà utilisé sur le web et l’électronique. le meilleur candidat est le format de description **.JSON** ([JavaScript Object Notation](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation)).
+
+***Cerveau (Électricité) > OpenBCI (C) > Wifi Shield (C) > Streaming (NodeJS + JSON) > Mentalista DB (Javascript)***
+Une illustration du chemin de l'onde cérébrale vers la base de données.
+
+Le fichier JSON doit encapsuler les différents standards. Ceux utilisés à l'échelle internationale utilisée par d'autres scientifiques et les standards propores à la structure de la base de données et ses futures applications.
+
+Ce qui donne 4 entrées pour le fichier JSON :
+
+- deux standardisé ("info", "biodata") en accord avec les besoins des scientifiques, qui sont respectivement les méta donnée de la captation et les données cérébrales.
+- deux  autres propre au besoin de chaque projet, la section "mentalista" décrivant les besoins de la base de données pour classifier le ficher et "app" les informations spécifiques à l’application qui a permis de recueillir ces données cérébrales.
 
 ```
 {
@@ -17,7 +25,7 @@ Le fichier JSON doit encapsuler les différents standard qui nous permet défini
 }
 ```
 
-Ce qui donne 4 entrée pour ce fichier deux standardisé ("info", "biodata") en accord avec les besoins des scientifiques. Et deux  autre propre au besoin de chaque projet la section "mentalista" décrivant les besoin de la base de données pour classifier le ficher et "app" les informations spécifique à l’application qui a tiré ces données cérébrales.
+**info**: décrit les méta-données de la session d’enregistrement
 
 ```
 "info": [{	
@@ -44,7 +52,8 @@ Ce qui donne 4 entrée pour ce fichier deux standardisé ("info", "biodata") en 
 }],
 ```
 
-**info :** décrit les méta-données de la session d’enregistrement
+**biodata**: décrit l’enregistrement des données en fonction de la [topologie](https://en.wikipedia.org/wiki/10–20_system_(EEG)), d’un [timestamp](https://fr.wikipedia.org/wiki/Horodatage) et de l’unité
+L’exemple ici montre trois enregistrements cérébraux à 8 canaux avec chacun un timestamp leur donnant un repère temporel précis.
 
 ```
 "biodata": [
@@ -59,7 +68,7 @@ Ce qui donne 4 entrée pour ce fichier deux standardisé ("info", "biodata") en 
 			7.056745022195285,
 			4.754953953750924
 		],
-		"timestamp": 1497479774194733.0
+		"timestamp": 1503311302182
 	},{
 		"value":[
 			7.056745022195285,
@@ -71,7 +80,7 @@ Ce qui donne 4 entrée pour ce fichier deux standardisé ("info", "biodata") en 
 			7.056745022195285,
 			4.754953953750924
 		],
-		"timestamp": 1497479774194733.0
+		"timestamp": 1503311310564
 	},{ 
 		"value":[
 			7.056745022195285,
@@ -83,10 +92,25 @@ Ce qui donne 4 entrée pour ce fichier deux standardisé ("info", "biodata") en 
 			7.056745022195285,
 			4.754953953750924
 		],
-		"timestamp": 1497479774194733.0
+		"timestamp": 1503311317143
 	}
 ]
 ```
 
-**biodata :** décrit l’enregistrement des données en fonction de la topologie d’un timestamp et de l’unité
-L’exemple ici montre trois enregistrement cérébralaux à 8 channel avec chacun un timestamp leur donnant un repère temporelle précis.
+**mentalista**: 
+
+```
+"mentalista": [
+	{ 
+	}
+]
+```
+
+**app**: 
+
+```
+"app": [
+	{ 
+	}
+]
+```
