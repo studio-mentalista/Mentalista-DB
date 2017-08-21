@@ -6,7 +6,7 @@ Il n’existe pas encore de standardisation d'un format de données pour l’env
 
 Notre base de données est programmée en langage web mais les casques EEG sont programmés en C et en Java et d’autres langages utilisés pour l’électronique. Il nous faut un format récent / portable / déjà utilisé sur le web et l’électronique. le meilleur candidat est le format de description **.JSON** ([JavaScript Object Notation](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation)).
 
-[Une illustration du chemin de l'onde cérébrale vers la base de données.](img/json/streaming.png)
+![Une illustration du chemin de l'onde cérébrale vers la base de données.](img/json/streaming.png)
 
 Le fichier JSON doit encapsuler les différents standards. Ceux utilisés à l'échelle internationale utilisée par d'autres scientifiques et les standards propores à la structure de la base de données et ses futures applications.
 
