@@ -135,7 +135,7 @@ L'exemple qui suit montre les méta-données pour la classification d'un objet p
 
 ```
 "app": [{ 
-  "experience":"BrainLib",
+  "experience":"Mentalista VisionAPI",
   "version": "1.2",
   
   "object":"Cat",
