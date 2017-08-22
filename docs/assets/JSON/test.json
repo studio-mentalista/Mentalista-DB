@@ -1,0 +1,100 @@
+{
+  "app": [{ 
+    "experience":"Mentalista VisionAPI",
+    "version": "1.2",
+  
+    "object":"Cat",
+    "accuracy":0.92355632,
+    "timestamp":1497479774194733,
+    "singleObject": true,
+
+    "localisation":[
+    	{"x":183.76,"y":54.72},
+    	{"x":21.62,"y":297.31},
+    	{"x":208.59,"y":23.04},
+    	{"x":825.64,"y":517.40}
+    ],
+    "img":"cat_1497479774194733.jpg"  
+  }],
+  "mentalista": [{ 
+    "experience": "BrainLib",
+    "block":13,
+  
+    "txHash":"0x16e41aa9d97d1c3374a4cb9599fedbd24d4b56",
+    "block_timestamp":1497479774194925,
+    "from":"0x19e03255f667bdfd50a",
+    "to":"0x9c98e381edc fe1ac5149",
+    "contract_type" : "Mentalista-smart-contract",
+  
+    "start_timestamp": 1497479774194733,
+    "end_timestamp": 1497479774205216,
+  
+    "user": "user#4155",
+    "context": "undefined",
+  
+    "place": "undefined",
+    "long": 48.880169,
+    "lat": 2.365573		
+  }],
+  "info": [{	
+    "id": null,
+    "session_id": null,
+    "created_at": 1497479774194733,
+  
+    "name": "undifined",
+    "metric": "EEG",
+    "type":"timeserie",
+  
+    "channel_count": 8, 
+    "topology": [ "Pz", "Oz", "Cz", "C1", "FP1", "FP2", "F3", "F4"],
+    "sampleRate": 120,
+    "unit": "millivolts",
+  
+    "version": "1.1",
+  
+    "source": {
+      "name": "OpenBCI",
+      "size": "meduim",
+      "type": "Ultracortex"
+    }
+  }],
+  "biodata": [
+    { 
+    	"value":[
+        7.056745022195285,
+        4.754953953750924,
+        7.056745022195285,
+        4.754953953750924, 
+        7.056745022195285,
+        4.754953953750924,
+        7.056745022195285,
+        4.754953953750924
+    	],
+    	"timestamp": 1503311302182
+    },{
+    	"value":[
+        7.056745022195285,
+        4.754953953750924,
+        7.056745022195285,
+        4.754953953750924, 
+        7.056745022195285,
+        4.754953953750924,
+        7.056745022195285,
+        4.754953953750924
+    	],
+    	"timestamp": 1503311310564
+    },{ 
+    	"value":[
+        7.056745022195285,
+        4.754953953750924,
+        7.056745022195285,
+        4.754953953750924, 
+        7.056745022195285,
+        4.754953953750924,
+        7.056745022195285,
+        4.754953953750924
+    	],
+      "timestamp": 1503311317143
+    }
+  ]
+}
