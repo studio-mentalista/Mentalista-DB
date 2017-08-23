@@ -15,7 +15,7 @@ Ce qui donne 4 entrées pour le fichier JSON :
 - deux standardisés ("info", "biodata") en accord avec les besoins des scientifiques, qui sont respectivement les méta-données de la captation et les données cérébrales.
 - deux  autres propres au besoin de chaque projet, la section "mentalista" décrivant les besoins de la base de données pour classifier le ficher et "app" les informations spécifiques à l’application qui a permis de recueillir ces données cérébrales.
 
-```
+```json
 {
   "app": [],
   "mentalista": [],
@@ -26,7 +26,7 @@ Ce qui donne 4 entrées pour le fichier JSON :
 
 **info**: décrit les méta-données de la session d’enregistrement
 
-```
+```json
 "info": [{	
   "id": null,
   "session_id": null,
@@ -44,9 +44,9 @@ Ce qui donne 4 entrées pour le fichier JSON :
   "version": "1.1",
   
   "source": {
-    "name": "undefined",
-    "size": "undefined",
-    "type": "undefined"
+   "name": "undefined",
+   "size": "undefined",
+   "type": "undefined"
   }
 }],
 ```
@@ -55,7 +55,7 @@ Ce qui donne 4 entrées pour le fichier JSON :
 
 L’exemple ici montre trois enregistrements cérébraux à 8 canaux avec chacun un timestamp leur donnant un repère temporel précis.
 
-```
+```json
 "biodata": [
   { 
   	"value":[
@@ -99,7 +99,7 @@ L’exemple ici montre trois enregistrements cérébraux à 8 canaux avec chacun
 
 **mentalista**: héberge toutes les méta-données permettant de classifier l'enregistrement cérébral dans la base de données. Ansi que toutes les informations de la transaction utilisé pour sécuriser le fichier.
 
-```
+```json
 "mentalista": [{ 
   "experience": "BrainLib",
   "block":13,
@@ -133,7 +133,7 @@ Voici un exemple des applications qui peuvent recueillir des informations pour l
 
 L'exemple qui suit montre les méta-données pour la classification d'un objet par le cortex visuel, utilisées pour ceéer une libraire de pensées.
 
-```
+```json
 "app": [{ 
   "experience":"Mentalista VisionAPI",
   "version": "1.2",
