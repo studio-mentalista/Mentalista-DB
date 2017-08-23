@@ -34,11 +34,11 @@ Ce qui donne 4 entrées pour le fichier JSON :
   
   "name": "undifined",
   "metric": "EEG",
-  "type":"FFT", // timeserie …
+  "type":"FFT", /*timeserie …*/
   
   "channel_count": 8, 
   "topology": [ "Pz", "Oz", "Cz", "C1", "FP1", "FP2", "F3", "F4"],
-  "sampleRate": 2500, // always in hz
+  "sampleRate": 2500, /*always in hz*/
   "unit": "millivolts",
   
   "version": "1.1",
